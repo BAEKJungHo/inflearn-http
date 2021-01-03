@@ -20,3 +20,5 @@
 ## TCP, UDP
 
 IP 프로토콜의 한계점을 해결하기 위한 것이 TCP, UDP 이다.
+
+![img](/images/1.JPG)
