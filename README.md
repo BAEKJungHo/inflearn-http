@@ -59,3 +59,9 @@ IP 프로토콜의 한계점을 해결하기 위한 것이 TCP, UDP 이다.
 - TELNET - 23
 - HTTP - 80
 - HTTPS - 443
+
+## DNS
+
+DNS(Domain Name System) 도메인 명을 IP 로 변환
+
+![img](/images/6.JPG)
