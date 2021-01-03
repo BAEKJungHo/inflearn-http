@@ -22,3 +22,17 @@
 IP 프로토콜의 한계점을 해결하기 위한 것이 TCP, UDP 이다.
 
 ![img](/images/1.JPG)
+
+- TCP 특징
+  - 전송 제어 프로토콜(Transmission Control Protocol)
+  - 연결지향 - TCP 3 way handshake (가상연결)
+  - 데이터 전달 보증
+  - 순서 보장
+  - 신뢰할 수 있는 프로토콜
+  - 현재는 대부분 TCP 사용
+
+![img](/images/2.JPG)
+
+![img](/images/3.JPG)
+
+![img](/images/4.JPG)
