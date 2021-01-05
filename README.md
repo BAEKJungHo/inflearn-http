@@ -53,8 +53,8 @@ IP 프로토콜의 한계점을 해결하기 위한 것이 TCP, UDP 이다.
 
 ![img](/images/5.JPG)
 
-- 0 ~ 65535 할당 가능
-- 0 ~ 1023: 잘 알려진 포트, 사용하지 않는 것이 좋음
+- 0 ~ 65535 : 할당 가능
+- 0 ~ 1023 : 잘 알려진 포트, 사용하지 않는 것이 좋음
 - FTP - 20, 21
 - TELNET - 23
 - HTTP - 80
@@ -65,3 +65,57 @@ IP 프로토콜의 한계점을 해결하기 위한 것이 TCP, UDP 이다.
 DNS(Domain Name System) 도메인 명을 IP 로 변환
 
 ![img](/images/6.JPG)
+
+## URI 와 웹 브라우저 요청 흐름
+
+- URI(Uniform Resource Identifier)
+  - URN(Uniform Resource Name)
+    - 리소스에 이름을 부여
+    - 이름은 변하지 않는다.
+    - URN 이름만으로 실제 리소스를 찾을 수 있는 방법이 보편화 되지 않음
+    - urn:isbn:8960777331 (어떤 책의 isbn URN)
+  - URL(Uniform Resource Locator) 
+    - 리소스가 있는 위치를 지정
+    - 위치는 변할 수 있다.
+  
+- URI 단어 의미
+  - Uniform : 리소스 식별하는 통일된 방식
+  - Resource : 자원, URI 로 식별할 수 있는 모든 것
+  - Identifier : 다른 항목과 구분하는데 필요한 정보
+  
+![img](/images/7.JPG)
+
+### URL
+
+- 문법
+  - `scheme://[userinfo@]host[:port][/path][?query][#fragment]`
+  - https://www.google.com:443/search?q=hello&hl=ko
+
+- `scheme`
+  - 주로 프로토콜 사용
+  - 프로토콜 : 어떤 방식으로 자원에 접근할 것인가 하는 약속 규칙
+    - ex) http, https, ftp 등
+  - http는 80 포트, https는 443 포트를 주로 사용, 포트는 생략 가능
+  - https는 http에 보안 추가 (HTTP Secure)
+- `userinfo`
+  - URL 에 사용자 정보를 포함해서 인증
+  - 거의 사용 안함
+- `host`
+  - 호스트명
+  - 도메인명 또는 IP 주소를 직접 사용 가능
+    - ex) www.google.com
+- `port`
+  - 접속 포트
+  - 일반적으로 생략(http는 80, https는 443)
+- `path`
+  - 리소스 경로, 계층적 구조
+    - ex) /members/100, /items/iphone12
+- `query`
+  - key=value 형태
+  - `?`로 시작 `&`로 추가 가능 
+    - ?keyA=valueA&keyB=valueB
+  - query parameter, query string 등으로 불린다. 
+  - 웹 서버에 제공하는 파라미터
+- `fragment`
+  - html 내부 북마크 등에 사용
+  - 서버에 전송하는 정보 아님
