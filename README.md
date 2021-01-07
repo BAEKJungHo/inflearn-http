@@ -191,3 +191,54 @@ DNS(Domain Name System) 도메인 명을 IP 로 변환
 
 그래서 이벤트 설계시 다음과 같은 방식으로 많이한다. 첫 페이지는 로그인도 필요없는 정적 페이지만 뿌린다.(상태없는 순수한 html) 그리고 사람들이
 그 페이지에서 이것저것 보고 머무르는 시간을 가지게끔 한다음에 이벤트 참여 버튼을 누르게하거나 한다.
+
+## HTTP 메시지
+
+> [표준 스펙(RFC-7230)](https://tools.ietf.org/html/rfc7230#section-3)
+
+![img](/images/10.JPG)
+
+요청 메시지도 응답 메시지 처럼 body 를 가질 수 있다.
+
+### 요청 메시지
+
+> start-line = request-line / status-line
+>
+> request-line = method SP(공백) request-target SP HTTP-version CRLF(엔터)
+
+#### 시작 라인
+
+- HTTP 메서드 (GET: 조회)
+  - GET : 리소스 조회
+  - POST : 요청 내역 처리
+- 요청 대상 (/search?q=hello&hl=ko)
+  - `absolute-path[?query] (절대경로[?쿼리])`
+  - 절대경로= "/" 로 시작하는 경로
+  - http://...?x=y 와 같이 다른 유형의 경로지정 방법도 있다.
+- HTTP Version
+- HTTP 상태 코드 : 요청 성공과 실패를 나타냄
+  - 200: 성공
+  - 400: 클라이언트 요청 오류
+  - 500: 서버 내부 오류
+- 이유 문구 : 사람이 이해할 수 있는 짧은 상태 코드 설명 글
+
+#### HTTP 헤더
+
+```
+Content-Type: text/html;charset=UTF-8
+Content-Length: 3423
+```
+
+> header-field = field-name ":" OWS field-value OWS (OWS:띄어쓰기 허용)
+> 
+> field-name은 대소문자 구문 없음
+
+- 용도
+  - HTTP 전송에 필요한 모든 부가정보
+  - ex) 메시지 바디의 내용, 메시지 바디의 크기, 압축, 인증, 요청 클라이언트(브라우저) 정보, 서버 애플리케이션 정보, 캐시 관리 정보...
+  - [표준 헤더](https://en.wikipedia.org/wiki/List_of_HTTP_header_fields)
+  
+#### HTTP 메시지 바디
+
+- 실제 전송할 데이터
+- HTML 문서, 이미지, 영상, JSON 등등 byte 로 표현할 수 있는 모든 데이터 전송 가능
