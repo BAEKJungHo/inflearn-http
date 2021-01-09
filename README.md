@@ -263,7 +263,7 @@ Content-Length: 3423
   - 회원이라는 개념 자체가 바로 리소스다.
 -  리소스를 어떻게 식별하는게 좋을까?
   - 회원을 등록하고 수정하고 조회하는 것을 모두 배제
-  - 회원이라는 리소스만 식별하면 된다. -> 회원 리소스를 URI에 매핑
+  - 회원이라는 리소스만 식별하면 된다. -> 회원 리소스를 URI 에 매핑
   
 #### API URI 설계
 
@@ -273,7 +273,7 @@ Content-Length: 3423
 - 회원 수정 : /members/{id} - PATCH, PUT, POST
 - 회원 삭제 : /members/{id} - DELETE
 
-> 참고: 계층 구조상 상위를 컬렉션으로 보고 복수단어 사용 권장(member -> members)
+> 참고: 계층 구조상 상위를 컬렉션으로 보고 복수단어 사용 권장(member -> members), 예를들어 주문(order) 이면 orders 이런식으로 리소스를 식별할 수 있도록 URI 를 만들어야 한다.
 
 #### 리소스와 행위를 분리
 
@@ -596,4 +596,5 @@ HTML FROM 은 `GET 과 POST 메서드만 지원`한다.
 - `컨트롤러(controller), 컨트롤 URI`
   - 문서, 컬렉션, 스토어로 해결하기 어려운 추가 프로세스 실행
   - 동사를 직접 사용
-  - 예) /members/{id}/delete
+    - 예) /members/{id}/delete
+    - 예) /users/moveUp, /users/moveDown
