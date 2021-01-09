@@ -492,7 +492,7 @@ Host: www.google.com
 - `Content-Type: application/json을 주로 사용 (사실상 표준)`
   - TEXT, XML, JSON 등등
 
-## HTTP API `컬렉션, 스토어, HTML FROM`
+## HTTP API 컬렉션과 스토어, HTML FROM
 
 크게 설계 방식은 다음과 같다.
 
